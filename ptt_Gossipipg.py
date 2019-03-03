@@ -66,10 +66,10 @@ def GossipingFun(iPath,iPage,oLog):
     'from':'/bbs/Gossiping/index.html',
     'yes':'yes'
     }
-    S1=requests.session()
-    S=S1.post('https://www.ptt.cc/ask/over18',verify=False,data=payload)
-    S=S1.get('https://www.ptt.cc/bbs/Gossiping/index.html',verify=False)
-    soup=BeautifulSoup(S.text)
+    urlR=requests.session()
+    ul=urlR.post('https://www.ptt.cc/ask/over18',verify=False,data=payload)
+    ul=urlR.get('https://www.ptt.cc/bbs/Gossiping/index.html',verify=False)
+    soup=BeautifulSoup(ul.text)
     S4=str(soup.select('#action-bar-container > div > div.btn-group.btn-group-paging > a:nth-child(2)'))
     S5=re.findall('index(.*?).html">',S4,re.S)
     S6=int(S5[0]*1)

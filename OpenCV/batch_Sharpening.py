@@ -1,4 +1,4 @@
-##影像銳利化
+##影像銳利化與模糊化
 import os
 import cv2
 import numpy as np
